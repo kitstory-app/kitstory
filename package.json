@@ -8,11 +8,13 @@
   "type": "module",
   "scripts": {
     "preinstall": "npx only-allow pnpm",
+    "knip": "knip",
     "dev": "pnpm --filter=@fusky-labs/kitstory-web dev",
     "dev:desktop": "pnpm --filter=@fusky-labs/kitstory-desktop tauri dev"
   },
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
+    "knip": "^5.79.0",
     "only-allow": "1.2.1",
     "typescript": "~5"
   }
