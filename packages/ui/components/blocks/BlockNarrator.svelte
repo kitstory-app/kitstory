@@ -1,6 +1,6 @@
 <script lang="ts">
   import BlockBase from "./_BlockBase.svelte";
-  import Button from "../components/Button.svelte";
+  import Button from "../Button.svelte";
 </script>
 
 <BlockBase _blockType="narrator">

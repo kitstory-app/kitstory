@@ -9,7 +9,7 @@ pub fn run() {
     tauri::Builder::default()
         .plugin(tauri_plugin_os::init())
         .plugin(tauri_plugin_http::init())
-        // The persisted-scope plugin must be registered and initialized after the fs plugin
+        // persisted-scope plugin must be registered and initialized after the fs plugin
         .plugin(tauri_plugin_fs::init())
         .plugin(tauri_plugin_persisted_scope::init())
         .plugin(tauri_plugin_websocket::init())

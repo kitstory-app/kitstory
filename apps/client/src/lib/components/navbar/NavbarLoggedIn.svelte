@@ -16,7 +16,7 @@
     <Button icon variant="secondary" size="big">
       <MenuIcon size={19} />
     </Button>
-    <a href="/dashboard">Kitstory</a>
+    <a href="/">Kitstory</a>
     <Breadcrumbs />
   </div>
   <!-- Right -->

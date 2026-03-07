@@ -6,9 +6,6 @@
 
   const { isLoggedIn }: LayoutData = $props();
 
-  if (isLoggedIn) {
-    throw redirect(301, "/dashboard");
-  }
 </script>
 
 <Meta title="Kitstory - organize your OCs lol" />

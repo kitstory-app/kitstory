@@ -8,7 +8,7 @@ interface DefineBlock<D extends Record<string, unknown>> {
 	}
 	comments?: unknown[]
 	data: D
-	// TODO This could be handy~ But still unsure how I'd go about implementing this soon
+	// This is most likely for internal attachments
 	attachments?: unknown[]
 }
 
