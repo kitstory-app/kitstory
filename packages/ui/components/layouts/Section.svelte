@@ -1,6 +1,6 @@
 <script lang="ts">
   import type { Snippet } from "svelte";
-  import type { WithChildrenSnippet } from "../../types";
+  import type { WithChildrenSnippet } from "@kitstory/shared/types";
   interface Props {
     /** A simple heading that's used for accessibility; if no `heading()` is available,
      * it fallbacks into a simple heading instead. However,  it can be used to

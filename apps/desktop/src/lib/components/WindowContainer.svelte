@@ -14,22 +14,23 @@
     PanelRight,
     PanelLeftDashed,
   } from "@lucide/svelte";
-  import { sidebarToggle } from "@kitstory/ui/context";
+  import { getSidebarToggle, setSidebarToggle } from "@kitstory/ui/context";
+  import type { WithChildrenSnippet } from "@kitstory/shared/types";
 
   interface Props {
-    children: Snippet;
     titlebarActions: Snippet;
     breadcrumbs: Snippet;
   }
 
-  const { children, titlebarActions, breadcrumbs }: Props = $props();
+  const { children, titlebarActions, breadcrumbs }: WithChildrenSnippet<Props> =
+    $props();
 
   let closeButton: HTMLButtonElement;
   let restoreButton: HTMLButtonElement;
   let maximizeButton: HTMLButtonElement;
   let minmizeButton: HTMLButtonElement;
 
-  const globalSidebar = sidebarToggle.get();
+  const globalSidebar = getSidebarToggle();
 
   onMount(() => {
     const w = getCurrentWindow();
@@ -72,7 +73,7 @@
           </div>
         </button>
         <button
-          onclick={() => globalSidebar.set(!$globalSidebar)}
+          onclick={() => setSidebarToggle(!globalSidebar)}
           class="p-2 h-full place-items-center cursor-pointer hover:bg-neutral-500/40 rounded-md"
         >
           <PanelLeftDashed size={18} />

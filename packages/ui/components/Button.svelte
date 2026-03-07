@@ -1,10 +1,10 @@
 <script lang="ts">
   import type { Snippet } from "svelte";
   import type { HTMLButtonAttributes } from "svelte/elements";
-  import type { WithChildrenSnippet } from "../types";
 
   import { cva } from "class-variance-authority";
   import { twMerge } from "tailwind-merge";
+  import type { WithChildrenSnippet } from "@kitstory/shared/types";
 
   interface Props extends HTMLButtonAttributes {
     leftSlot?: Snippet;
@@ -28,10 +28,7 @@
   }: WithChildrenSnippet<Props> = $props();
 
   const button = cva(
-    twMerge(
-      "rounded-sm inline-flex items-center gap-x-1.5 cursor-pointer transition-colors",
-      className as string,
-    ),
+    "rounded-sm inline-flex items-center gap-x-1.5 cursor-pointer transition-colors",
     {
       variants: {
         variant: {
@@ -39,7 +36,9 @@
           secondary: "hover:bg-red-500/40",
         },
         size: {
+          // svelte-ignore state_referenced_locally
           small: !icon ? "px-2 py-1" : "p-1.5",
+          // svelte-ignore state_referenced_locally
           big: !icon ? "px-2.5 py-1.5" : "p-1",
         },
       },
@@ -49,10 +48,13 @@
 
 <button
   {...others}
-  class={button({
-    variant: variant || "primary",
-    size: size || "small",
-  })}
+  class={twMerge(
+    button({
+      variant: variant || "primary",
+      size: size || "small",
+    }),
+    className as string,
+  )}
 >
   {#if leftSlot}
     {@render leftSlot?.()}

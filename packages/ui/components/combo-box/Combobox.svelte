@@ -5,7 +5,7 @@
   import Button from "../Button.svelte";
   import { ChevronDownIcon } from "@lucide/svelte";
   import InputField from "../input/InputField.svelte";
-  import type { WithChildrenSnippet } from "../../types";
+  import type { WithChildrenSnippet } from "@kitstory/shared/types";
 
   interface Props extends PluckedButtonProps {
     icon: Snippet;

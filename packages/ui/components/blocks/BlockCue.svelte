@@ -3,7 +3,7 @@
   import Button from "../Button.svelte";
 </script>
 
-<BlockBase _blockType="cue">
+<BlockBase type="cue">
   <div id="avatar-container">
     <div class="size-12 bg-amber-300 rounded-full shrink-0"></div>
   </div>

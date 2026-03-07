@@ -1,11 +1,10 @@
 <script lang="ts">
   import type { WithChildrenSnippet } from "@kitstory/shared/types";
+  import { getBlocks } from "../../context"
 
   const { children }: WithChildrenSnippet = $props();
 </script>
 
-<nav
-  class="fixed top-0 inset-x-0 flex items-center justify-between px-3 h-(--nav-padding-y)"
->
+<div id="ks-block-manager" class="space-y-6">
   {@render children?.()}
-</nav>
+</div>

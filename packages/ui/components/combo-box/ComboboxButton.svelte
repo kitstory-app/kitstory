@@ -4,9 +4,9 @@
   import Button from "../Button.svelte";
   import { ChevronDownIcon } from "@lucide/svelte";
   import { twMerge } from "tailwind-merge";
+  import type { WithChildrenSnippet } from "@kitstory/shared/types";
 
   interface Props extends PluckedButtonProps {
-    children: Snippet;
     icon: Snippet;
   }
 
@@ -16,7 +16,7 @@
     icon,
     class: _class,
     size,
-  }: Partial<Props> = $props();
+  }: Partial<WithChildrenSnippet<Props>> = $props();
 </script>
 
 <div role="group" data-combobox-button="" class="flex items-center">

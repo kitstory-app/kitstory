@@ -1,6 +1,6 @@
 <script lang="ts">
   import { twMerge } from "tailwind-merge";
-  import type { WithChildrenSnippet } from "../types";
+  import type { WithChildrenSnippet } from "@kitstory/shared/types";
 
   interface Props {
     as?: keyof HTMLElementTagNameMap;

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import type { Snippet } from "svelte";
+  import type { WithChildrenSnippet } from "@kitstory/shared/types";
 
   const moveDom = (node: Element, inject: string) => {
     const target = document.querySelector(inject);
@@ -13,11 +13,10 @@
   };
 
   interface Props {
-    children?: Snippet;
     focusGuard: boolean;
   }
 
-  const { children, focusGuard }: Props = $props();
+  const { children, focusGuard }: WithChildrenSnippet<Props> = $props();
 </script>
 
 <div use:moveDom={"body"} data-portal="" class="contents">

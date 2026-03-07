@@ -9,7 +9,7 @@
      */
     uuid?: unknown;
     /** @internal */
-    _blockType: string;
+    type: string;
     blockIndex?: number;
 
     lowerThird?: Snippet;
@@ -21,7 +21,7 @@
     lowerThird,
     children,
     class: className,
-    _blockType,
+    type,
     blockIndex,
     uuid,
     ...others
@@ -31,12 +31,14 @@
 <!-- This is a base block component responsible for handling its position and the drag and drop logic -->
 <section {...others} class={["relative group", className]}>
   <div class="w-full border rounded-md px-2.5 py-3.5">
-    {@render children()}
+    {@render children?.()}
   </div>
   <div
     id="adder"
-    class="absolute -bottom-2.5 inset-x-0 flex justify-center gap-x-1 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto"
+    class="absolute -bottom-7 inset-x-0 flex justify-center gap-x-1 pointer-events-none group-hover:pointer-events-auto transition-[opacity,scale] duration-200 scale-98 group-hover:scale-100 opacity-0 group-hover:opacity-100"
   >
-    {@render lowerThird?.()}
+    <div class="bg-neutral-950 p-2 rounded-sm">
+      {@render lowerThird?.()}
+    </div>
   </div>
 </section>
