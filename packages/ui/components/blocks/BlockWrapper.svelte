@@ -1,6 +1,6 @@
 <script lang="ts">
   import type { WithChildrenSnippet } from "@kitstory/shared/types";
-  import { getBlocks } from "../../context"
+  import { getDialogueBlocks } from "../../context"
 
   const { children }: WithChildrenSnippet = $props();
 </script>

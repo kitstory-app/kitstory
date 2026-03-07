@@ -28,11 +28,11 @@
     EllipsisIcon,
   } from "@lucide/svelte";
   import { writable } from "svelte/store";
-  import { sidebarToggle } from "@kitstory/ui/context";
+  import { setSidebarToggle } from "@kitstory/ui/context";
 
   const sidebarVisible = writable(true);
 
-  sidebarToggle.set(sidebarVisible);
+  setSidebarToggle($sidebarVisible);
 </script>
 
 <aside

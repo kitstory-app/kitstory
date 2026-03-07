@@ -24,6 +24,7 @@
       class="dark:bg-neutral-800/40 rounded-md"
       autocapitalize="off"
       spellcheck="false"
+      rows="3"
     ></textarea>
   </div>
   {#snippet lowerThird()}
