@@ -1,4 +1,3 @@
-import type { Writable } from "svelte/store"
-import contextBuilder from "./svelteContextHelper"
+import { createContext } from "svelte"
 
-export const sidebarToggle = contextBuilder<Writable<boolean>>("global_sidebarToggle")
+export const [getSidebarToggle, setSidebarToggle] = createContext<boolean>()
