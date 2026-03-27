@@ -2,18 +2,20 @@
   "name": "@fusky-labs/kitstory",
   "private": true,
   "version": "0.0.1",
-  "repository": "https://github.com/fusky-labs/kitstory-client.git",
+  "repository": "https://github.com/kitstory-app/kitstory.git",
   "author": "Kerby Keith Aquino <hello@kurojifusky.com>",
   "license": "GPL-3.0-only",
   "type": "module",
   "scripts": {
     "preinstall": "npx only-allow pnpm",
     "knip": "knip",
+    "lint": "biome check .",
+    "lint:rs": "",
     "dev:web": "pnpm --filter=@fusky-labs/kitstory-web dev",
     "dev:lite": "pnpm --filter=@fusky-labs/kitstory-lite tauri dev"
   },
   "devDependencies": {
-    "@biomejs/biome": "1.9.4",
+    "@biomejs/biome": "2.4.0",
     "knip": "^5.86.0",
     "only-allow": "1.2.1",
     "typescript": "~5"
