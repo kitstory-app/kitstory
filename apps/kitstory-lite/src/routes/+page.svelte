@@ -11,7 +11,7 @@
       class="group px-2 py-1 rounded-md inline-flex gap-x-2 hover:bg-gray-300/20"
     >
       <h1 class="text-2xl font-bold">
-        A Normal Vacation at Maxie Pads Apartment
+        KISS KISS FALL IN LOVE
       </h1>
       <button
         class={[

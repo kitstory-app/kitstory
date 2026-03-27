@@ -35,7 +35,7 @@
   </div>
   <div
     id="adder"
-    class="absolute -bottom-7 inset-x-0 flex justify-center gap-x-1 pointer-events-none group-hover:pointer-events-auto transition-[opacity,scale] duration-200 scale-98 group-hover:scale-100 opacity-0 group-hover:opacity-100"
+    class="absolute z-1 -bottom-7 inset-x-0 flex justify-center gap-x-1 pointer-events-none group-hover:pointer-events-auto transition-[opacity,scale] duration-200 scale-98 group-hover:scale-100 opacity-0 group-hover:opacity-100"
   >
     <div class="bg-neutral-950 p-2 rounded-sm">
       {@render lowerThird?.()}
