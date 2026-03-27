@@ -1,7 +1,7 @@
 <script lang="ts">
-  import { ChevronDownIcon } from "@lucide/svelte";
-  import BlockBase from "./_BlockBase.svelte";
-  import Button from "../Button.svelte";
+import { ChevronDownIcon } from "@lucide/svelte"
+import Button from "../Button.svelte"
+import BlockBase from "./_BlockBase.svelte"
 </script>
 
 <BlockBase

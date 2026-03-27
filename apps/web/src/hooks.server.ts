@@ -1,4 +1,4 @@
-import { redirect, type Handle } from "@sveltejs/kit"
+import { type Handle, redirect } from "@sveltejs/kit"
 
 export const handle: Handle = async ({ event, resolve }) => {
   event.setHeaders({

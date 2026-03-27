@@ -1,3 +1,3 @@
-import { arrayWritable } from "./arrayWritable";
+import { arrayWritable } from "./arrayWritable"
 
-export const historyStore = arrayWritable();
+export const historyStore = arrayWritable()

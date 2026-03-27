@@ -1,7 +1,6 @@
 <script lang="ts">
-  import { Button } from "@kitstory/ui";
-  import kinter from "./kinter.png";
-  import { EllipsisIcon, HistoryIcon } from "@lucide/svelte";
+import { Button } from "@kitstory/ui"
+import { EllipsisIcon, HistoryIcon } from "@lucide/svelte"
 </script>
 
 <div class="space-y-3.5">

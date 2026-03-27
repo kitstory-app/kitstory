@@ -1,6 +1,5 @@
 <script lang="ts">
-    import { Button } from "@kitstory/ui";
-
+import { Button } from "@kitstory/ui"
 </script>
 
 <div>

@@ -1,9 +1,9 @@
 <script lang="ts">
-  import type { WithChildrenSnippet } from "@kitstory/shared/types";
+import type { WithChildrenSnippet } from "@kitstory/shared/types"
 
-  interface Props {
-    buttons?: boolean;
-  }
+interface Props {
+  buttons?: boolean
+}
 
-  const { children }: WithChildrenSnippet<Props> = $props();
+const { children }: WithChildrenSnippet<Props> = $props()
 </script>

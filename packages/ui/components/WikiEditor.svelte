@@ -1,21 +1,21 @@
 <script lang="ts">
-  import Button from "./Button.svelte";
-  import { ComboboxButton } from "./combo-box";
+import Button from "./Button.svelte"
+import { ComboboxButton } from "./combo-box"
 
-  type EditMode = "visual" | "source";
+type EditMode = "visual" | "source"
 
-  interface Props {
-    editMode?: EditMode;
-  }
+interface Props {
+  editMode?: EditMode
+}
 
-  const { editMode: defaultEditMode = "visual" }: Props = $props();
+const { editMode: defaultEditMode = "visual" }: Props = $props()
 
-  let editMode = $state<EditMode>(defaultEditMode);
+let editMode = $state<EditMode>(defaultEditMode)
 
-  const editModeMap: Record<EditMode, string> = {
-    source: "Source",
-    visual: "Visual",
-  };
+const editModeMap: Record<EditMode, string> = {
+  source: "Source",
+  visual: "Visual",
+}
 </script>
 
 <div

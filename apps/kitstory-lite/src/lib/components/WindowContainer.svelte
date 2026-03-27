@@ -1,58 +1,57 @@
 <script lang="ts">
-  import { onMount, type Snippet } from "svelte";
-  import { getCurrentWindow } from "@tauri-apps/api/window";
+import type { WithChildrenSnippet } from "@kitstory/shared/types"
+import { getSidebarToggle, setSidebarToggle } from "@kitstory/ui/context"
 
-  import {
-    SquareIcon as MaxIcon,
-    MinusIcon as MiniIcon,
-    CopyIcon as RestoreIcon,
-    XIcon as CloseIcon,
-    MenuIcon,
-    PanelLeftClose,
-    PanelLeftOpen,
-    PanelLeft,
-    PanelRight,
-    PanelLeftDashed,
-  } from "@lucide/svelte";
-  import { getSidebarToggle, setSidebarToggle } from "@kitstory/ui/context";
-  import type { WithChildrenSnippet } from "@kitstory/shared/types";
+import {
+  XIcon as CloseIcon,
+  SquareIcon as MaxIcon,
+  MenuIcon,
+  MinusIcon as MiniIcon,
+  PanelLeft,
+  PanelLeftClose,
+  PanelLeftDashed,
+  PanelLeftOpen,
+  PanelRight,
+  CopyIcon as RestoreIcon,
+} from "@lucide/svelte"
+import { getCurrentWindow } from "@tauri-apps/api/window"
+import { onMount, type Snippet } from "svelte"
 
-  interface Props {
-    titlebarActions: Snippet;
-    breadcrumbs: Snippet;
-  }
+interface Props {
+  titlebarActions: Snippet
+  breadcrumbs: Snippet
+}
 
-  const { children, titlebarActions, breadcrumbs }: WithChildrenSnippet<Props> =
-    $props();
+const { children, titlebarActions, breadcrumbs }: WithChildrenSnippet<Props> = $props()
 
-  let closeButton: HTMLButtonElement;
-  let restoreButton: HTMLButtonElement;
-  let maximizeButton: HTMLButtonElement;
-  let minmizeButton: HTMLButtonElement;
+let closeButton: HTMLButtonElement
+let restoreButton: HTMLButtonElement
+let maximizeButton: HTMLButtonElement
+let minmizeButton: HTMLButtonElement
 
-  const globalSidebar = getSidebarToggle();
+const globalSidebar = getSidebarToggle()
 
-  onMount(() => {
-    const w = getCurrentWindow();
+onMount(() => {
+  const w = getCurrentWindow()
 
-    w.onResized((e) => {
-      console.log("resized", e);
-    });
+  w.onResized((e) => {
+    console.log("resized", e)
+  })
 
-    closeButton.addEventListener("click", () => {
-      // TODO add a confirmation system modal if there are unsaved changes
-      w.close();
-    });
-    restoreButton.addEventListener("click", () => {
-      w.unmaximize();
-    });
-    maximizeButton.addEventListener("click", () => {
-      w.maximize();
-    });
-    minmizeButton.addEventListener("click", () => {
-      w.minimize();
-    });
-  });
+  closeButton.addEventListener("click", () => {
+    // TODO add a confirmation system modal if there are unsaved changes
+    w.close()
+  })
+  restoreButton.addEventListener("click", () => {
+    w.unmaximize()
+  })
+  maximizeButton.addEventListener("click", () => {
+    w.maximize()
+  })
+  minmizeButton.addEventListener("click", () => {
+    w.minimize()
+  })
+})
 </script>
 
 <div

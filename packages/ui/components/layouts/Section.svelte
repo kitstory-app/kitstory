@@ -1,22 +1,18 @@
 <script lang="ts">
-  import type { Snippet } from "svelte";
-  import type { WithChildrenSnippet } from "@kitstory/shared/types";
-  interface Props {
-    /** A simple heading that's used for accessibility; if no `heading()` is available,
-     * it fallbacks into a simple heading instead. However,  it can be used to
-     * override when using `{#snippet heading()}`
-     * */
-    label: string;
-    heading?: Snippet<[{ labelText?: string; hashed?: string }]>;
-    headingActions?: Snippet;
-  }
+import type { WithChildrenSnippet } from "@kitstory/shared/types"
+import type { Snippet } from "svelte"
 
-  const {
-    label,
-    children,
-    heading,
-    headingActions,
-  }: WithChildrenSnippet<Props> = $props();
+interface Props {
+  /** A simple heading that's used for accessibility; if no `heading()` is available,
+   * it fallbacks into a simple heading instead. However,  it can be used to
+   * override when using `{#snippet heading()}`
+   * */
+  label: string
+  heading?: Snippet<[{ labelText?: string; hashed?: string }]>
+  headingActions?: Snippet
+}
+
+const { label, children, heading, headingActions }: WithChildrenSnippet<Props> = $props()
 </script>
 
 <section>

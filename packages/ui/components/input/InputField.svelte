@@ -1,21 +1,14 @@
 <script lang="ts">
-  import type { Snippet } from "svelte";
-  import type { HTMLInputAttributes } from "svelte/elements";
-  import { twMerge } from "tailwind-merge";
+import type { Snippet } from "svelte"
+import type { HTMLInputAttributes } from "svelte/elements"
+import { twMerge } from "tailwind-merge"
 
-  interface Props extends HTMLInputAttributes {
-    actions?: Snippet;
-    inputClass?: string;
-  }
+interface Props extends HTMLInputAttributes {
+  actions?: Snippet
+  inputClass?: string
+}
 
-  const {
-    id,
-    type,
-    actions,
-    inputClass,
-    class: _class,
-    ...others
-  }: Props = $props();
+const { id, type, actions, inputClass, class: _class, ...others }: Props = $props()
 </script>
 
 <div data-input-field="" class={twMerge("relative", _class as string)}>

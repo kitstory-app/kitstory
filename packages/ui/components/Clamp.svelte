@@ -1,19 +1,14 @@
 <script lang="ts">
-  import { twMerge } from "tailwind-merge";
-  import type { WithChildrenSnippet } from "@kitstory/shared/types";
+import type { WithChildrenSnippet } from "@kitstory/shared/types"
+import { twMerge } from "tailwind-merge"
 
-  interface Props {
-    as?: keyof HTMLElementTagNameMap;
-    class?: string;
-    larger?: boolean;
-  }
+interface Props {
+  as?: keyof HTMLElementTagNameMap
+  class?: string
+  larger?: boolean
+}
 
-  const {
-    as: Element = "div",
-    children,
-    class: classN,
-    larger,
-  }: WithChildrenSnippet<Props> = $props();
+const { as: Element = "div", children, class: classN, larger }: WithChildrenSnippet<Props> = $props()
 </script>
 
 <svelte:element

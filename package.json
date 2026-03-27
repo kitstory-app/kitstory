@@ -10,7 +10,7 @@
     "preinstall": "npx only-allow pnpm",
     "knip": "knip",
     "lint": "biome check .",
-    "lint:rs": "",
+    "lint:fix": "biome write .",
     "dev:web": "pnpm --filter=@fusky-labs/kitstory-web dev",
     "dev:lite": "pnpm --filter=@fusky-labs/kitstory-lite tauri dev"
   },

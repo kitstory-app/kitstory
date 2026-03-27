@@ -1,7 +1,7 @@
 <script lang="ts">
-  import { Clamp } from "@kitstory/ui";
+import { Clamp } from "@kitstory/ui"
 
-  const footerItems = [];
+const footerItems = []
 </script>
 
 <div class="bg-black">

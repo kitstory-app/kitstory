@@ -1,14 +1,14 @@
 <script lang="ts">
-  import { Button } from "@kitstory/ui";
-  import NavbarBase from "./NavbarBase.svelte";
-  import { MenuIcon } from "@lucide/svelte";
+import { Button } from "@kitstory/ui"
+import { MenuIcon } from "@lucide/svelte"
+import NavbarBase from "./NavbarBase.svelte"
 
-  const onboardItems = [
-    { heading: "Features", items: [] },
-    { heading: "Solutions", items: [] },
-    { heading: "Roadmap", href: "/roadmap" },
-    { heading: "Open Sauce", href: "/open-source" },
-  ];
+const onboardItems = [
+  { heading: "Features", items: [] },
+  { heading: "Solutions", items: [] },
+  { heading: "Roadmap", href: "/roadmap" },
+  { heading: "Open Sauce", href: "/open-source" },
+]
 </script>
 
 <NavbarBase>

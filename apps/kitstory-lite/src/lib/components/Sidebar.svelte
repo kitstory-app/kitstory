@@ -1,38 +1,34 @@
 <script lang="ts">
-  import {
-    MenuItem,
-    MenuItemGroup,
-    MenuHeadingGroup,
-  } from "@kitstory/ui/components/menu";
-  import {
-    UsersRoundIcon,
-    ZapIcon,
-    HouseIcon,
-    Clock4Icon,
-    BookOpenIcon,
-    PackageIcon,
-    SquareKanbanIcon,
-    Plug2Icon,
-    LibraryBigIcon,
-    TagsIcon,
-    CloudOffIcon,
-    ChevronRightIcon,
-    LayoutTemplateIcon,
-    SparklesIcon,
-    BookIcon,
-    ScrollTextIcon,
-    MapPinIcon,
-    ShapesIcon,
-    ListOrderedIcon,
-    ChevronsUpDownIcon,
-    EllipsisIcon,
-  } from "@lucide/svelte";
-  import { writable } from "svelte/store";
-  import { setSidebarToggle } from "@kitstory/ui/context";
+import { MenuHeadingGroup, MenuItem, MenuItemGroup } from "@kitstory/ui/components/menu"
+import { setSidebarToggle } from "@kitstory/ui/context"
+import {
+  BookIcon,
+  BookOpenIcon,
+  ChevronRightIcon,
+  ChevronsUpDownIcon,
+  Clock4Icon,
+  CloudOffIcon,
+  EllipsisIcon,
+  HouseIcon,
+  LayoutTemplateIcon,
+  LibraryBigIcon,
+  ListOrderedIcon,
+  MapPinIcon,
+  PackageIcon,
+  Plug2Icon,
+  ScrollTextIcon,
+  ShapesIcon,
+  SparklesIcon,
+  SquareKanbanIcon,
+  TagsIcon,
+  UsersRoundIcon,
+  ZapIcon,
+} from "@lucide/svelte"
+import { writable } from "svelte/store"
 
-  const sidebarVisible = writable(true);
+const sidebarVisible = writable(true)
 
-  setSidebarToggle($sidebarVisible);
+setSidebarToggle($sidebarVisible)
 </script>
 
 <aside

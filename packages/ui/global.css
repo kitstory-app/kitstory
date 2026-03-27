@@ -8,7 +8,15 @@
 
 @source ".";
 
-@custom-variant dark (&:where(html.dark *), @media (prefers-color-scheme:dark));
+@custom-variant dark {
+  &:where(html.dark *) {
+    @slot;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    @slot;
+  }
+}
 
 @theme {
   --font-heading: "Instrument Sans", var(--default-font-family);

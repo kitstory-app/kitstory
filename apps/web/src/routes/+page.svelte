@@ -1,11 +1,10 @@
 <script lang="ts">
-  import Meta from "$lib/components/Meta.svelte";
-  import { Button, Clamp } from "@kitstory/ui";
-  import type { LayoutData } from "./$types";
-  import { redirect } from "@sveltejs/kit";
+import { Button, Clamp } from "@kitstory/ui"
+import { redirect } from "@sveltejs/kit"
+import Meta from "$lib/components/Meta.svelte"
+import type { LayoutData } from "./$types"
 
-  const { isLoggedIn }: LayoutData = $props();
-
+const { isLoggedIn }: LayoutData = $props()
 </script>
 
 <Meta title="Kitstory - organize your OCs lol" />

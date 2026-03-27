@@ -1,23 +1,18 @@
 <script lang="ts">
-  import type { WithChildrenSnippet } from "@kitstory/shared/types";
-  import type { Snippet } from "svelte";
-  import type { HTMLAttributes } from "svelte/elements";
-  // import { scale } from "svelte/transition"
+import type { WithChildrenSnippet } from "@kitstory/shared/types"
+import type { Snippet } from "svelte"
+import type { HTMLAttributes } from "svelte/elements"
 
-  type SelectedAttrs = Pick<HTMLAttributes<never>, "class" | "role" | "id">;
+// import { scale } from "svelte/transition"
 
-  interface Props extends SelectedAttrs {
-    state?: boolean;
-    heading?: Snippet;
-  }
+type SelectedAttrs = Pick<HTMLAttributes<never>, "class" | "role" | "id">
 
-  const {
-    state,
-    children,
-    heading,
-    id,
-    class: className,
-  }: WithChildrenSnippet<Props> = $props();
+interface Props extends SelectedAttrs {
+  state?: boolean
+  heading?: Snippet
+}
+
+const { state, children, heading, id, class: className }: WithChildrenSnippet<Props> = $props()
 </script>
 
 <svelte:element

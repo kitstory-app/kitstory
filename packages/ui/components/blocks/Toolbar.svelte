@@ -1,21 +1,21 @@
 <script lang="ts">
-  import { Button } from "../..";
-  import {
-    BoldIcon,
-    ChevronDownIcon,
-    EllipsisVerticalIcon,
-    EyeIcon,
-    FunnelIcon,
-    ItalicIcon,
-    MessageSquarePlusIcon,
-    Redo2Icon,
-    StrikethroughIcon,
-    UnderlineIcon,
-    Undo2Icon,
-    ZoomInIcon,
-    ZoomOutIcon,
-  } from "@lucide/svelte";
-  import Separator from "../Separator.svelte";
+import {
+  BoldIcon,
+  ChevronDownIcon,
+  EllipsisVerticalIcon,
+  EyeIcon,
+  FunnelIcon,
+  ItalicIcon,
+  MessageSquarePlusIcon,
+  Redo2Icon,
+  StrikethroughIcon,
+  UnderlineIcon,
+  Undo2Icon,
+  ZoomInIcon,
+  ZoomOutIcon,
+} from "@lucide/svelte"
+import { Button } from "../.."
+import Separator from "../Separator.svelte"
 </script>
 
 <div

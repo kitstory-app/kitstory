@@ -1,26 +1,26 @@
 <script lang="ts">
-	import "../app.css";
+import "../app.css"
 
-	import interFont from "@fontsource/inter/files/inter-latin-400-normal.woff2?url";
-	import interFont700 from "@fontsource/inter/files/inter-latin-700-normal.woff2?url";
-	import { Navbar, NavbarLoggedIn } from "$lib/components/navbar";
-	import { pwaInfo } from "virtual:pwa-info";
-	import Footer from "$lib/components/Footer.svelte";
-	import { onMount } from "svelte";
-	import { dev } from "$app/environment";
-	import type { LayoutProps } from "./$types";
+import { pwaInfo } from "virtual:pwa-info"
+import interFont from "@fontsource/inter/files/inter-latin-400-normal.woff2?url"
+import interFont700 from "@fontsource/inter/files/inter-latin-700-normal.woff2?url"
+import { onMount } from "svelte"
+import { dev } from "$app/environment"
+import Footer from "$lib/components/Footer.svelte"
+import { Navbar, NavbarLoggedIn } from "$lib/components/navbar"
+import type { LayoutProps } from "./$types"
 
-	const { children, data }: LayoutProps = $props();
+const { children, data }: LayoutProps = $props()
 
-	const webManifest = $derived(pwaInfo ? pwaInfo.webManifest.linkTag : "");
+const webManifest = $derived(pwaInfo ? pwaInfo.webManifest.linkTag : "")
 
-	if (dev) {
-		onMount(() => {
-			console.log(data);
-		});
-	}
+if (dev) {
+  onMount(() => {
+    console.log(data)
+  })
+}
 
-	const fonts = [interFont, interFont700];
+const fonts = [interFont, interFont700]
 </script>
 
 <svelte:head>

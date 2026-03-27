@@ -1,29 +1,21 @@
 <script lang="ts">
-  import { ChevronDownIcon } from "@lucide/svelte";
-  import MenuItem from "./MenuItem.svelte";
-  import type { MenuProps } from "./MenuItem.types";
-  import { Collapser } from "../templates";
+import { ChevronDownIcon } from "@lucide/svelte"
+import { Collapser } from "../templates"
+import MenuItem from "./MenuItem.svelte"
+import type { MenuProps } from "./MenuItem.types"
 
-  interface Props extends MenuProps {
-    label: string;
-    isCollapsed?: true;
-  }
+interface Props extends MenuProps {
+  label: string
+  isCollapsed?: true
+}
 
-  const {
-    label,
-    isCollapsed,
-    icon,
-    active,
-    children,
-    disabled,
-    rightSlot: rootRightSlot,
-  }: Props = $props();
+const { label, isCollapsed, icon, active, children, disabled, rightSlot: rootRightSlot }: Props = $props()
 
-  let isOpen = $state(isCollapsed ?? false);
+let isOpen = $state(isCollapsed ?? false)
 
-  const toggleState = () => {
-    isOpen = !isOpen;
-  };
+const toggleState = () => {
+  isOpen = !isOpen
+}
 </script>
 
 <Collapser id="menu-item-group" state={isOpen}>

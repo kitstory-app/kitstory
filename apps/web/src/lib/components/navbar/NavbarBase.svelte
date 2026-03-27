@@ -1,7 +1,7 @@
 <script lang="ts">
-  import type { WithChildrenSnippet } from "@kitstory/shared/types";
+import type { WithChildrenSnippet } from "@kitstory/shared/types"
 
-  const { children }: WithChildrenSnippet = $props();
+const { children }: WithChildrenSnippet = $props()
 </script>
 
 <nav

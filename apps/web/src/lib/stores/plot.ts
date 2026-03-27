@@ -1,11 +1,11 @@
-import type { PlotBlock } from "../types";
-import { arrayWritable } from "./arrayWritable";
+import type { PlotBlock } from "../types"
+import { arrayWritable } from "./arrayWritable"
 
 // plotStore
-export const recentlyDeletedPlotStore = arrayWritable<PlotBlock>();
+export const recentlyDeletedPlotStore = arrayWritable<PlotBlock>()
 
 // Probably turn these into class
-export const plotStore = arrayWritable<PlotBlock>();
+export const plotStore = arrayWritable<PlotBlock>()
 
 export const spawnCharacterCell = () => {
   // TODO check the $characterStore for any set defaults, then append them on $.data.character
@@ -19,8 +19,8 @@ export const spawnCharacterCell = () => {
         textContent: "",
       },
     },
-  ]);
-};
+  ])
+}
 
 export const spawnNarratorCell = () => {
   plotStore.update((prevData) => [
@@ -32,8 +32,8 @@ export const spawnNarratorCell = () => {
         textContent: "",
       },
     },
-  ]);
-};
+  ])
+}
 
 // TODO: Not sure what to do with the cue cell atm
 // TODO: Probably thinking about doing chat logic, or some technical details when dealing with shots and stuff
@@ -47,7 +47,5 @@ export const spawnCueCell = () => {
         textContent: "",
       },
     },
-  ]);
-};
-
-
+  ])
+}

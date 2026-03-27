@@ -1,13 +1,7 @@
 <script lang="ts">
-  import {
-    BellIcon,
-    CirclePlusIcon,
-    CircleUserIcon,
-    MenuIcon,
-    SearchIcon,
-  } from "@lucide/svelte";
-  import { Button } from "@kitstory/ui";
-  import Breadcrumbs from "../Breadcrumbs.svelte";
+import { Button } from "@kitstory/ui"
+import { BellIcon, CirclePlusIcon, CircleUserIcon, MenuIcon, SearchIcon } from "@lucide/svelte"
+import Breadcrumbs from "../Breadcrumbs.svelte"
 </script>
 
 <nav class="fixed top-0 inset-x-0 flex items-center justify-between px-3 h-(--nav-padding-y)">

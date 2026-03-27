@@ -1,10 +1,6 @@
 <script lang="ts">
-  import {
-    ChevronRightIcon,
-    ChevronsUpDownIcon,
-    CloudOffIcon,
-  } from "@lucide/svelte";
-  import ProjectSyncStatus from "./ProjectSyncStatus.svelte";
+import { ChevronRightIcon, ChevronsUpDownIcon, CloudOffIcon } from "@lucide/svelte"
+import ProjectSyncStatus from "./ProjectSyncStatus.svelte"
 </script>
 
 <div

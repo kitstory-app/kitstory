@@ -1,18 +1,11 @@
 <script lang="ts">
-  import type { MenuProps } from "./MenuItem.types";
+import type { MenuProps } from "./MenuItem.types"
 
-  interface Props extends MenuProps {
-    as?: keyof HTMLElementTagNameMap;
-  }
+interface Props extends MenuProps {
+  as?: keyof HTMLElementTagNameMap
+}
 
-  const {
-    children,
-    rightSlot,
-    as,
-    icon: Icon,
-    active = false,
-    disabled = false,
-  }: Props = $props();
+const { children, rightSlot, as, icon: Icon, active = false, disabled = false }: Props = $props()
 </script>
 
 <svelte:element

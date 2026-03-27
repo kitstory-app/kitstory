@@ -1,22 +1,16 @@
 <script lang="ts">
-  import type { Snippet } from "svelte";
-  import type { PluckedButtonProps } from "./Combobox.types";
-  import Button from "../Button.svelte";
-  import { ChevronDownIcon } from "@lucide/svelte";
-  import { twMerge } from "tailwind-merge";
-  import type { WithChildrenSnippet } from "@kitstory/shared/types";
+import type { WithChildrenSnippet } from "@kitstory/shared/types"
+import { ChevronDownIcon } from "@lucide/svelte"
+import type { Snippet } from "svelte"
+import { twMerge } from "tailwind-merge"
+import Button from "../Button.svelte"
+import type { PluckedButtonProps } from "./Combobox.types"
 
-  interface Props extends PluckedButtonProps {
-    icon: Snippet;
-  }
+interface Props extends PluckedButtonProps {
+  icon: Snippet
+}
 
-  const {
-    children,
-    variant,
-    icon,
-    class: _class,
-    size,
-  }: Partial<WithChildrenSnippet<Props>> = $props();
+const { children, variant, icon, class: _class, size }: Partial<WithChildrenSnippet<Props>> = $props()
 </script>
 
 <div role="group" data-combobox-button="" class="flex items-center">

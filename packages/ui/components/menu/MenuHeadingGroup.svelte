@@ -1,14 +1,14 @@
 <script lang="ts">
-  import { Collapser } from "../templates";
-  import type { MenuProps } from "./MenuItem.types";
+import { Collapser } from "../templates"
+import type { MenuProps } from "./MenuItem.types"
 
-  interface Props extends MenuProps {
-    label?: string;
-    // collapsible?: boolean;
-    // isCollapsed?: true;
-  }
+interface Props extends MenuProps {
+  label?: string
+  // collapsible?: boolean;
+  // isCollapsed?: true;
+}
 
-  const { children, label, rightSlot }: Props = $props();
+const { children, label, rightSlot }: Props = $props()
 </script>
 
 <Collapser

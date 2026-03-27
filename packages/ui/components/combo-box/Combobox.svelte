@@ -1,24 +1,17 @@
 <script lang="ts">
-  import type { Snippet } from "svelte";
-  import type { PluckedButtonProps } from "./Combobox.types";
+import type { WithChildrenSnippet } from "@kitstory/shared/types"
+import { ChevronDownIcon } from "@lucide/svelte"
+import type { Snippet } from "svelte"
+import Button from "../Button.svelte"
+import InputField from "../input/InputField.svelte"
+import type { PluckedButtonProps } from "./Combobox.types"
 
-  import Button from "../Button.svelte";
-  import { ChevronDownIcon } from "@lucide/svelte";
-  import InputField from "../input/InputField.svelte";
-  import type { WithChildrenSnippet } from "@kitstory/shared/types";
+interface Props extends PluckedButtonProps {
+  icon: Snippet
+  name: string
+}
 
-  interface Props extends PluckedButtonProps {
-    icon: Snippet;
-    name: string;
-  }
-
-  const {
-    children,
-    variant,
-    icon,
-    size,
-    name,
-  }: WithChildrenSnippet<Partial<Props>> = $props();
+const { children, variant, icon, size, name }: WithChildrenSnippet<Partial<Props>> = $props()
 </script>
 
 <InputField id="lol">

@@ -1,31 +1,23 @@
 <script lang="ts">
-  import type { WithChildrenSnippet, Snippet } from "@kitstory/shared/types";
+import type { Snippet, WithChildrenSnippet } from "@kitstory/shared/types"
 
-  interface Props {
-    class?: string;
+interface Props {
+  class?: string
 
-    /** Instead of this component generating a UUID, it's best for components
-     * to independently generate a UUID on their own, so that there's no server mismatch
-     */
-    uuid?: unknown;
-    /** @internal */
-    type: string;
-    blockIndex?: number;
+  /** Instead of this component generating a UUID, it's best for components
+   * to independently generate a UUID on their own, so that there's no server mismatch
+   */
+  uuid?: unknown
+  /** @internal */
+  type: string
+  blockIndex?: number
 
-    lowerThird?: Snippet;
+  lowerThird?: Snippet
 
-    [x: string]: unknown;
-  }
+  [x: string]: unknown
+}
 
-  const {
-    lowerThird,
-    children,
-    class: className,
-    type,
-    blockIndex,
-    uuid,
-    ...others
-  }: WithChildrenSnippet<Props> = $props();
+const { lowerThird, children, class: className, type, blockIndex, uuid, ...others }: WithChildrenSnippet<Props> = $props()
 </script>
 
 <!-- This is a base block component responsible for handling its position and the drag and drop logic -->

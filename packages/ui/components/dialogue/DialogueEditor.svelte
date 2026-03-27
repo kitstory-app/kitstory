@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Button, DialogueTextbox } from "../..";
+import { Button, DialogueTextbox } from "../.."
 </script>
 
 <div

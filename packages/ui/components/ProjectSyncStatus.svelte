@@ -1,15 +1,15 @@
 <script lang="ts">
-  import { ChevronRightIcon, CloudOffIcon } from "@lucide/svelte";
+import { ChevronRightIcon, CloudOffIcon } from "@lucide/svelte"
 
-  interface Props {
-    syncStatus?: "complete" | "progress" | "error" | "outdated";
-    /** localOnly can also be triggered when device has no internet or lost connection */
-    localOnly?: boolean;
-    timeSinceSync?: Date;
-    errorMsg?: string;
-  }
+interface Props {
+  syncStatus?: "complete" | "progress" | "error" | "outdated"
+  /** localOnly can also be triggered when device has no internet or lost connection */
+  localOnly?: boolean
+  timeSinceSync?: Date
+  errorMsg?: string
+}
 
-  const { syncStatus, localOnly, timeSinceSync, errorMsg }: Props = $props();
+const { syncStatus, localOnly, timeSinceSync, errorMsg }: Props = $props()
 </script>
 
 <div class="opacity-75 inline-flex items-center">

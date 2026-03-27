@@ -1,4 +1,4 @@
-import { writable } from "svelte/store";
+import { writable } from "svelte/store"
 
 export const arrayWritable = <Data = unknown>() => {
   const { subscribe, update, set } = writable<Data[]>([])
@@ -6,9 +6,10 @@ export const arrayWritable = <Data = unknown>() => {
   return {
     subscribe,
     update,
-    deleteFromIndex: (...indices: number[]) => update((prevData) => {
-      return prevData.filter((_, index) => !indices.includes(index));
-    }),
-    clear: () => set([])
+    deleteFromIndex: (...indices: number[]) =>
+      update((prevData) => {
+        return prevData.filter((_, index) => !indices.includes(index))
+      }),
+    clear: () => set([]),
   }
 }

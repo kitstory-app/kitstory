@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { BlockCharacter, BlockWrapper } from "@kitstory/ui/components/blocks";
-  import ResizablePane from "@kitstory/ui/components/layouts/ResizablePane.svelte";
+import { BlockCharacter, BlockWrapper } from "@kitstory/ui/components/blocks"
+import ResizablePane from "@kitstory/ui/components/layouts/ResizablePane.svelte"
 </script>
 
 <ResizablePane>

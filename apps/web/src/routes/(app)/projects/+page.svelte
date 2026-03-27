@@ -1,6 +1,6 @@
 <script lang="ts">
-  import Meta from "$lib/components/Meta.svelte";
-  import { Section } from "@kitstory/ui";
+import { Section } from "@kitstory/ui"
+import Meta from "$lib/components/Meta.svelte"
 </script>
 
 <Meta title="Projects" />

@@ -1,22 +1,22 @@
 <script lang="ts">
-  import { Button } from "@kitstory/ui";
-  import { EllipsisIcon } from "@lucide/svelte";
-  import { onMount } from "svelte";
+import { Button } from "@kitstory/ui"
+import { EllipsisIcon } from "@lucide/svelte"
+import { onMount } from "svelte"
 
-  let _hasItemsTruncated = false;
-  let crumbRoot: HTMLElement;
+let _hasItemsTruncated = false
+let crumbRoot: HTMLElement
 
-  onMount(() => {
-    const crumbResizeObserve = new ResizeObserver((e) => {
-      console.log(e);
-    });
+onMount(() => {
+  const crumbResizeObserve = new ResizeObserver((e) => {
+    console.log(e)
+  })
 
-    crumbResizeObserve.observe(crumbRoot);
+  crumbResizeObserve.observe(crumbRoot)
 
-    return () => {
-      crumbResizeObserve.unobserve(crumbRoot);
-    };
-  });
+  return () => {
+    crumbResizeObserve.unobserve(crumbRoot)
+  }
+})
 </script>
 
 <ul

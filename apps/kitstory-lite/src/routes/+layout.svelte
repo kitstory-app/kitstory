@@ -1,23 +1,13 @@
 <script lang="ts">
-  import "../styles.css";
-  import "@fontsource/azeret-mono";
+import "../styles.css"
+import "@fontsource/azeret-mono"
 
-  import { message } from "@tauri-apps/plugin-dialog";
+import { BellIcon, ChevronLeftIcon, ChevronRightIcon, CircleUserIcon, InboxIcon, SettingsIcon, UserIcon } from "@lucide/svelte"
+import { message } from "@tauri-apps/plugin-dialog"
+import Sidebar from "$lib/components/Sidebar.svelte"
+import WindowContainer from "$lib/components/WindowContainer.svelte"
 
-  import {
-    BellIcon,
-    ChevronLeftIcon,
-    ChevronRightIcon,
-    InboxIcon,
-    SettingsIcon,
-    CircleUserIcon,
-    UserIcon,
-  } from "@lucide/svelte";
-
-  import WindowContainer from "$lib/components/WindowContainer.svelte";
-  import Sidebar from "$lib/components/Sidebar.svelte";
-
-  const { children } = $props();
+const { children } = $props()
 </script>
 
 <WindowContainer>
