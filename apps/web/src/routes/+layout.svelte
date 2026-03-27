@@ -42,15 +42,14 @@
 {:else}
 	<NavbarLoggedIn />
 {/if}
-<div id="ks-wrapper" class="flex gap-x-4 mt-(--nav-padding-y)">
+<div id="ks-app-wrapper" class="flex gap-x-4 mt-(--nav-padding-y)">
 	<!-- <aside class="shrink-0">sidebar</aside> -->
-	<div
+	<main
+		id="skip-content"
 		class="flex-1 dark:bg-neutral-900 bg-white dark:border-neutral-800 selection:bg-amber-300 selection:text-black min-h-[calc(theme(height.dvh)-calc(var(--nav-padding-y))*1)]"
 	>
-		<main id="skip-content">
-			{@render children()}
-		</main>
-	</div>
+		{@render children()}
+	</main>
 </div>
 {#if !data.isLoggedIn}
 	<Footer />

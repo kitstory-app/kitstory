@@ -9,7 +9,7 @@
   "scripts": {
     "preinstall": "npx only-allow pnpm",
     "knip": "knip",
-    "dev": "pnpm --filter=@fusky-labs/kitstory-web dev",
+    "dev:web": "pnpm --filter=@fusky-labs/kitstory-web dev",
     "dev:lite": "pnpm --filter=@fusky-labs/kitstory-lite tauri dev"
   },
   "devDependencies": {

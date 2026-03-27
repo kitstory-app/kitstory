@@ -8,13 +8,13 @@ export const handle: Handle = async ({ event, resolve }) => {
   const isLoggedIn = event.cookies.get("is_loggedin") === "true"
   const pathname = event.url.pathname
 
-  if ((pathname === "/" || pathname === "/login" || pathname === "/register") && isLoggedIn) {
-    throw redirect(301, "/dashboard")
-  }
+  // if ((pathname === "/" || pathname === "/login" || pathname === "/register") && isLoggedIn) {
+  //   throw redirect(301, "/projects")
+  // }
 
-  if (pathname.startsWith("/dashboard") && !isLoggedIn) {
-    throw redirect(301, "/login")
-  }
+  // if (pathname.startsWith("/projects") && !isLoggedIn) {
+  //   throw redirect(301, "/login")
+  // }
 
   return resolve(event)
 }
