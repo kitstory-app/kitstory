@@ -1,18 +1,18 @@
 {
   "$schema": "https://schema.tauri.app/config/2",
-  "productName": "Kitstory",
+  "productName": "Kitstory Lite",
   "version": "0.1.0",
-  "identifier": "com.fusky-labs.kitstory",
+  "identifier": "com.fusky-labs.kitstory-lite",
   "build": {
     "beforeDevCommand": "pnpm dev",
-    "devUrl": "http://localhost:1420",
+    "devUrl": "http://localhost:1320",
     "beforeBuildCommand": "pnpm build",
     "frontendDist": "../build"
   },
   "app": {
     "windows": [
       {
-        "title": "Kitstory",
+        "title": "Kitstory Lite",
         "width": 1200,
         "height": 700,
         "decorations": false,

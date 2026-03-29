@@ -1,26 +1,25 @@
+use kitstory_shared_tauri::KitstoryPluginBuilder;
 use tauri::{
+    Manager,
     menu::{MenuBuilder, MenuItemBuilder},
     tray::{MouseButton, MouseButtonState, TrayIconBuilder, TrayIconEvent},
-    Manager,
 };
-use tauri_plugin_deep_link::DeepLinkExt;
+// use tauri_plugin_deep_link::DeepLinkExt;
 
 pub fn run() {
     tauri::Builder::default()
-        .plugin(tauri_plugin_os::init())
-        .plugin(tauri_plugin_http::init())
+        .with_kitstory_core()
+        // .plugin(tauri_plugin_http::init()) -- studio
         // persisted-scope plugin must be registered and initialized after the fs plugin
-        .plugin(tauri_plugin_fs::init())
-        .plugin(tauri_plugin_persisted_scope::init())
-        .plugin(tauri_plugin_websocket::init())
-        .plugin(tauri_plugin_autostart::Builder::new().build())
-        .plugin(tauri_plugin_updater::Builder::new().build())
-        .plugin(tauri_plugin_positioner::init())
-        .plugin(tauri_plugin_deep_link::init())
-        .plugin(tauri_plugin_clipboard_manager::init())
-        .plugin(tauri_plugin_notification::init())
-        .plugin(tauri_plugin_dialog::init())
-        .plugin(tauri_plugin_opener::init())
+        // .plugin(tauri_plugin_fs::init())
+        // .plugin(tauri_plugin_persisted_scope::init())
+        // .plugin(tauri_plugin_websocket::init()) -- studio
+        // .plugin(tauri_plugin_autostart::Builder::new().build())
+        // .plugin(tauri_plugin_updater::Builder::new().build())
+        // .plugin(tauri_plugin_positioner::init())
+        // .plugin(tauri_plugin_deep_link::init()) -- studio
+        // .plugin(tauri_plugin_clipboard_manager::init()) -- studio
+        // .plugin(tauri_plugin_opener::init())
         .plugin(tauri_plugin_single_instance::init(|app, _args, _cwd| {
             let _ = app
                 .get_webview_window("main")
@@ -28,18 +27,18 @@ pub fn run() {
                 .set_focus();
         }))
         // Deep links
-        .setup(|app| {
-            #[cfg(desktop)]
-            app.deep_link().register("kitstory")?;
+        // .setup(|app| {
+        //     #[cfg(desktop)]
+        //     app.deep_link().register("kitstory")?;
 
-            #[cfg(any(windows, target_os = "linux"))]
-            {
-                use tauri_plugin_deep_link::DeepLinkExt;
-                app.deep_link().register_all()?;
-            }
+        //     #[cfg(any(windows, target_os = "linux"))]
+        //     {
+        //         use tauri_plugin_deep_link::DeepLinkExt;
+        //         app.deep_link().register_all()?;
+        //     }
 
-            Ok(())
-        })
+        //     Ok(())
+        // })
         // Menu stuff
         .setup(|app| {
             let menu = MenuBuilder::new(app)

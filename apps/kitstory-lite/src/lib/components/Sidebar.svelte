@@ -1,6 +1,6 @@
 <script lang="ts">
 import { MenuHeadingGroup, MenuItem, MenuItemGroup } from "@kitstory/ui/components/menu"
-import { setSidebarToggle } from "@kitstory/ui/context"
+// import { setSidebarToggle } from "@kitstory/ui/context"
 import {
   BookIcon,
   BookOpenIcon,
@@ -26,9 +26,9 @@ import {
 } from "@lucide/svelte"
 import { writable } from "svelte/store"
 
-const sidebarVisible = writable(true)
+// const sidebarVisible = writable(true)
 
-setSidebarToggle($sidebarVisible)
+// setSidebarToggle($sidebarVisible)
 </script>
 
 <aside

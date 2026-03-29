@@ -1,19 +1,7 @@
 <script lang="ts">
 import type { WithChildrenSnippet } from "@kitstory/shared/types"
-import { getSidebarToggle, setSidebarToggle } from "@kitstory/ui/context"
 
-import {
-  XIcon as CloseIcon,
-  SquareIcon as MaxIcon,
-  MenuIcon,
-  MinusIcon as MiniIcon,
-  PanelLeft,
-  PanelLeftClose,
-  PanelLeftDashed,
-  PanelLeftOpen,
-  PanelRight,
-  CopyIcon as RestoreIcon,
-} from "@lucide/svelte"
+import { XIcon as CloseIcon, SquareIcon as MaxIcon, MinusIcon as MiniIcon, PanelLeftDashed, CopyIcon as RestoreIcon } from "@lucide/svelte"
 import { getCurrentWindow } from "@tauri-apps/api/window"
 import { onMount, type Snippet } from "svelte"
 
@@ -28,8 +16,6 @@ let closeButton: HTMLButtonElement
 let restoreButton: HTMLButtonElement
 let maximizeButton: HTMLButtonElement
 let minmizeButton: HTMLButtonElement
-
-const globalSidebar = getSidebarToggle()
 
 onMount(() => {
   const w = getCurrentWindow()
@@ -61,18 +47,13 @@ onMount(() => {
   <div id="title-bar" class="h-10 flex items-center gap-x-0.5 overflow-hidden">
     <div class="h-full relative select-none shrink-0 flex items-center gap-x-2">
       <div class="inline-flex items-center">
-        <button
-          class="p-2 h-full inline-flex items-center cursor-pointer hover:bg-neutral-500/40 rounded-md"
+        <div
+          class="p-2 h-full rounded-md text-base"
         >
-          <span class="font-semibold ml-1">Kitstory</span>
-          <div
-            class="ml-1 inline-block text-xs px-1.5 py-0.5 bg-red-600 rounded-md"
-          >
-            Dev Build
-          </div>
-        </button>
+          <span class="font-semibold ml-1">Kitstory Lite</span>
+        </div>
         <button
-          onclick={() => setSidebarToggle(!globalSidebar)}
+          // onclick={() => setSidebarToggle(!globalSidebar)}
           class="p-2 h-full place-items-center cursor-pointer hover:bg-neutral-500/40 rounded-md"
         >
           <PanelLeftDashed size={18} />
@@ -117,5 +98,5 @@ onMount(() => {
       <CloseIcon size={20} />
     </button>
   </div>
-  {@render children()}
+  {@render children?.()}
 </div>

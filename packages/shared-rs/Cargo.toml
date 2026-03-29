@@ -1,0 +1,9 @@
+[package]
+name = "kitstory-shared-rs"
+version = "0.1.0"
+authors = ["Fusky Labs", "Kerby Keith Aquino"]
+edition = "2024"
+
+[dependencies]
+serde = { workspace = true }
+serde_json = { workspace = true }

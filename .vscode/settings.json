@@ -1,5 +1,5 @@
 {
-  "rust-analyzer.linkedProjects": ["apps/kitstory-lite/src-tauri/Cargo.toml", "apps/kitstory-studio/src-tauri/Cargo.toml"],
+  "rust-analyzer.cargo.autoreload": true,
   "files.associations": {
     "tsconfig.json": "jsonc"
   },
