@@ -7,7 +7,7 @@
   },
   "files": {
     "ignoreUnknown": false,
-    "includes": ["**", "!!apps/web/.svelte-kit", "!!apps/**/src-tauri/target", "!!apps/**/src-tauri/gen/schemas", "!!/**/dist", "!!/**/build"]
+    "includes": ["**", "!!apps/web/.svelte-kit", "!!apps/**/src-tauri/target", "!!apps/**/src-tauri/gen/schemas", "!!packages/plugin-sdk", "!!/**/dist", "!!/**/build"]
   },
   "css": {
     "parser": {

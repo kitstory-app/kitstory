@@ -1,5 +1,5 @@
 <script lang="ts">
-import type { WithChildrenSnippet } from "@kitstory/shared/types"
+import type { WithChildrenSnippet } from "@kitstory/shared-web/types"
 import { cva } from "class-variance-authority"
 import type { Snippet } from "svelte"
 import type { HTMLButtonAttributes } from "svelte/elements"

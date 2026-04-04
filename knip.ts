@@ -1,7 +1,7 @@
 import type { KnipConfig } from "knip"
 
 const config: KnipConfig = {
-  ignore: ["apps/desktop/src-tauri/{build,target}/**"],
+  ignore: ["packages/plugin-sdk/**"],
   ignoreDependencies: ["@biomejs/biome", "@fontsource/*", "tailwindcss"],
 }
 
