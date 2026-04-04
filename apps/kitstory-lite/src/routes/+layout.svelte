@@ -1,20 +1,29 @@
 <script lang="ts">
-import "../styles.css"
-import "@fontsource/azeret-mono"
+  import "../styles.css";
+  import "@fontsource/azeret-mono";
 
-import { BellIcon, ChevronLeftIcon, ChevronRightIcon, CircleUserIcon, InboxIcon, SettingsIcon, UserIcon } from "@lucide/svelte"
-import { message } from "@tauri-apps/plugin-dialog"
-import Sidebar from "$lib/components/Sidebar.svelte"
-import WindowContainer from "$lib/components/WindowContainer.svelte"
+  import {
+    BellIcon,
+    ChevronLeftIcon,
+    ChevronRightIcon,
+    CircleUserIcon,
+    InboxIcon,
+    PlusIcon,
+    SettingsIcon,
+    UserIcon,
+  } from "@lucide/svelte";
+  import { message } from "@tauri-apps/plugin-dialog";
+  import Sidebar from "$lib/components/Sidebar.svelte";
+  import WindowContainer from "$lib/components/WindowContainer.svelte";
 
-const { children } = $props()
+  const { children } = $props();
 </script>
 
 <WindowContainer>
-  {#snippet breadcrumbs()}
-    <nav id="breadcrumbs" class="flex">
+  {#snippet tabArea()}
+    <nav id="breadcrumbs" class="flex items-center">
       <button
-        class="py-1.5 h-full w-8 grid place-items-center cursor-pointer hover:bg-neutral-400/75 rounded-md"
+        class="py-1.5 size-full w-8 grid place-items-center cursor-pointer hover:bg-neutral-400/75 rounded-md"
       >
         <ChevronLeftIcon size={19} />
       </button>
@@ -23,25 +32,17 @@ const { children } = $props()
       >
         <ChevronRightIcon size={19} />
       </button>
+      <button
+        title="New tab"
+        class="py-1.5 h-full flex items-center gap-x-2 cursor-pointer px-1.5 bg-neutral-600/75 hover:bg-neutral-400/75 rounded-md"
+      >
+        <PlusIcon size={19} />
+      </button>
       <!-- <button>Home</button> -->
     </nav>
   {/snippet}
-  {#snippet titlebarActions()}
-    <button
-      class="inline-flex items-center gap-x-2 px-2 h-full place-items-center cursor-pointer rounded-md hover:bg-neutral-500/40"
-    >
-      <InboxIcon size={22} />
-    </button>
-    <button
-      class="inline-flex items-center gap-x-2 px-2.5 h-full place-items-center cursor-pointer rounded-md hover:bg-neutral-500/40"
-    >
-      <CircleUserIcon size={22} />
-    </button>
-  {/snippet}
-  <div id="root" class="flex">
-    <Sidebar />
-    <div class="flex-1">
-      {@render children()}
-    </div>
-  </div>
+
+  <main id="root">
+    {@render children()}
+  </main>
 </WindowContainer>
