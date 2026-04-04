@@ -1,5 +1,5 @@
 {
-  "name": "@kitstory/shared",
+  "name": "@kitstory/shared-web",
   "version": "0.0.1",
   "private": true,
   "devDependencies": {

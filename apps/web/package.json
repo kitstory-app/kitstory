@@ -10,7 +10,7 @@
     "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json"
   },
   "devDependencies": {
-    "@kitstory/shared": "workspace:*",
+    "@kitstory/shared-web": "workspace:*",
     "@kitstory/ui": "workspace:*",
     "@sveltejs/adapter-auto": "^6",
     "@sveltejs/kit": "^2.22.0",

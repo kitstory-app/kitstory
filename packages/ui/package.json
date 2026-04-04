@@ -4,7 +4,7 @@
   "private": true,
   "devDependencies": {
     "@lucide/svelte": "^0.540.0",
-    "@kitstory/shared": "workspace:*",
+    "@kitstory/shared-web": "workspace:*",
     "@tailwindcss/forms": "^0.5.9",
     "@tailwindcss/typography": "^0.5.15",
     "class-variance-authority": "^0.7.0",

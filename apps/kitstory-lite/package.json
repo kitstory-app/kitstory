@@ -29,7 +29,7 @@
     "tailwindcss": "^4"
   },
   "devDependencies": {
-    "@kitstory/shared": "workspace:*",
+    "@kitstory/shared-web": "workspace:*",
     "@kitstory/ui": "workspace:*",
     "@sveltejs/adapter-static": "^3.0.6",
     "@sveltejs/kit": "^2.9.0",

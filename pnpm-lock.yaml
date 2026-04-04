@@ -75,9 +75,9 @@ importers:
         specifier: ^4
         version: 4.1.12
     devDependencies:
-      '@kitstory/shared':
+      '@kitstory/shared-web':
         specifier: workspace:*
-        version: link:../../packages/shared
+        version: link:../../packages/shared-web
       '@kitstory/ui':
         specifier: workspace:*
         version: link:../../packages/ui
@@ -118,9 +118,9 @@ importers:
         specifier: ^0.540.0
         version: 0.540.0(svelte@5.53.7)
     devDependencies:
-      '@kitstory/shared':
+      '@kitstory/shared-web':
         specifier: workspace:*
-        version: link:../../packages/shared
+        version: link:../../packages/shared-web
       '@kitstory/ui':
         specifier: workspace:*
         version: link:../../packages/ui
@@ -161,7 +161,7 @@ importers:
         specifier: ^1.2.0
         version: 1.2.0(vite@7.1.3(@types/node@25.0.3)(jiti@2.6.1)(lightningcss@1.30.1)(terser@5.44.1)(yaml@2.8.2))(workbox-build@7.4.0)(workbox-window@7.4.0)
 
-  packages/shared:
+  packages/shared-web:
     devDependencies:
       svelte:
         specifier: ^5.53.7
@@ -174,9 +174,9 @@ importers:
 
   packages/ui:
     devDependencies:
-      '@kitstory/shared':
+      '@kitstory/shared-web':
         specifier: workspace:*
-        version: link:../shared
+        version: link:../shared-web
       '@lucide/svelte':
         specifier: ^0.540.0
         version: 0.540.0(svelte@5.53.7)

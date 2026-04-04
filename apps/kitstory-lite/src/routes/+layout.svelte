@@ -2,19 +2,8 @@
   import "../styles.css";
   import "@fontsource/azeret-mono";
 
-  import {
-    BellIcon,
-    ChevronLeftIcon,
-    ChevronRightIcon,
-    CircleUserIcon,
-    InboxIcon,
-    PlusIcon,
-    SettingsIcon,
-    UserIcon,
-  } from "@lucide/svelte";
-  import { message } from "@tauri-apps/plugin-dialog";
-  import Sidebar from "$lib/components/Sidebar.svelte";
-  import WindowContainer from "$lib/components/WindowContainer.svelte";
+  import { ChevronLeftIcon, ChevronRightIcon, PlusIcon } from "@lucide/svelte";
+  import WindowContainer from "@kitstory/ui/components/layouts/WindowContainer.svelte";
 
   const { children } = $props();
 </script>
