@@ -1,5 +1,5 @@
 <script lang="ts">
-import type { WithChildrenSnippet } from "@kitstory/shared/types"
+import type { WithChildrenSnippet } from "@kitstory/shared-web/types"
 
 interface Props {
   buttons?: boolean

@@ -1,5 +1,5 @@
 <script lang="ts">
-import type { WithChildrenSnippet } from "@kitstory/shared/types"
+import type { WithChildrenSnippet } from "@kitstory/shared-web/types"
 import { twMerge } from "tailwind-merge"
 
 interface Props {

@@ -1,5 +1,5 @@
 <script lang="ts">
-import type { Snippet, WithChildrenSnippet } from "@kitstory/shared/types"
+import type { Snippet, WithChildrenSnippet } from "@kitstory/shared-web/types"
 
 interface Props {
   name: string

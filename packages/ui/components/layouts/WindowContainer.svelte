@@ -122,7 +122,7 @@
         onclick={restoreWindow}
         class="grid h-full w-11 cursor-pointer place-items-center py-1.5 hover:bg-blue-500/75"
       >
-        <RestoreIcon size={16} />
+        <RestoreIcon size={16} class="rotate-90" />
       </button>
     {:else}
       <button

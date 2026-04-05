@@ -1,5 +1,5 @@
 <script lang="ts">
-import type { Snippet } from "@kitstory/shared/types"
+import type { Snippet } from "@kitstory/shared-web/types"
 import { XIcon } from "@lucide/svelte"
 import { getTabContext } from "./tabContext"
 

@@ -1,5 +1,5 @@
 <script lang="ts">
-import type { WithChildrenSnippet } from "@kitstory/shared/types"
+import type { WithChildrenSnippet } from "@kitstory/shared-web/types"
 import { ChevronDownIcon } from "@lucide/svelte"
 import type { Snippet } from "svelte"
 import Button from "../Button.svelte"

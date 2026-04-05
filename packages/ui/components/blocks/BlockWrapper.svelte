@@ -1,5 +1,5 @@
 <script lang="ts">
-import type { WithChildrenSnippet } from "@kitstory/shared/types"
+import type { WithChildrenSnippet } from "@kitstory/shared-web/types"
 import type { HTMLAttributes } from "svelte/elements"
 import { twMerge } from "tailwind-merge"
 import { getDialogueBlocks } from "../../context"
