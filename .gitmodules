@@ -1,0 +1,3 @@
+[submodule "schema/mylo"]
+	path = schema/mylo
+	url = https://github.com/fusky-labs/mylo

@@ -1,0 +1,13 @@
+enum BlockType : string {
+  dialogue
+  narrator
+  cue
+}
+
+schema KS_Character {
+  id string
+  name string
+  slug string
+  localAssets []string @rust("local_assets")
+  attributes map<string, string>
+}
