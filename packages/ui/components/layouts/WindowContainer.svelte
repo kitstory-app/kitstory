@@ -9,14 +9,20 @@
   } from "@lucide/svelte";
   import { getCurrentWindow } from "@tauri-apps/api/window";
   import { onMount, type Snippet } from "svelte";
+  import Button from "../Button.svelte";
 
   interface Props {
+    rightActions?: Snippet;
     titlebarActions?: Snippet;
     tabArea?: Snippet;
   }
 
-  const { children, titlebarActions, tabArea }: WithChildrenSnippet<Props> =
-    $props();
+  const {
+    children,
+    titlebarActions,
+    rightActions,
+    tabArea,
+  }: WithChildrenSnippet<Props> = $props();
 
   let isMaximized = $state(false);
 
@@ -85,10 +91,12 @@
     <div class="relative flex h-full shrink-0 items-center gap-x-2 select-none">
       <div class="inline-flex items-center">
         <div class="h-full rounded-md p-2 text-base">
-          <span class="ml-1 font-semibold">Kitstory Lite</span>
-          <span class="ml-1 rounded-sm bg-red-600 px-1.5 py-0.5 text-sm"
+          <!-- Logo placeholder -->
+          <span class="ml-1 font-semibold">Kitstory</span>
+          <!-- Badge -->
+          <!-- <span class="ml-1 rounded-sm bg-red-600 px-1.5 py-0.5 text-sm"
             >Dev</span
-          >
+          > -->
         </div>
       </div>
       <hr class="h-5 border-l" />
@@ -102,42 +110,47 @@
     ></div>
     {#if titlebarActions}
       {@render titlebarActions()}
-      <hr class="mx-1 h-5 border-l" />
+      <hr class="mx-3 h-5 border-l" />
     {/if}
-    <button
-      title="Settings"
-      class="grid h-full w-11 cursor-pointer place-items-center py-1.5 hover:bg-neutral-400/75"
-    >
-      <EllipsisVerticalIcon size={19} />
-    </button>
-    <hr class="mx-1 h-5 border-l" />
-    <button
+    {#if rightActions}
+      {@render rightActions()}
+      <hr class="mx-3 h-5 border-l" />
+    {/if}
+    <Button
+      icon
+      variant="secondary"
+      class="grid place-items-center size-11 hover:bg-neutral-600/50 opacity-65 hover:opacity-100"
       onclick={minimizeWindow}
-      class="grid h-full w-11 cursor-pointer place-items-center py-1.5 hover:bg-blue-400/75"
     >
       <MiniIcon size={19} />
-    </button>
+    </Button>
     {#if isMaximized}
-      <button
+      <Button
+        icon
+        variant="secondary"
+        class="grid place-items-center size-11 hover:bg-neutral-600/50 opacity-65 hover:opacity-100"
         onclick={restoreWindow}
-        class="grid h-full w-11 cursor-pointer place-items-center py-1.5 hover:bg-blue-500/75"
       >
         <RestoreIcon size={16} class="rotate-90" />
-      </button>
+      </Button>
     {:else}
-      <button
+      <Button
+        icon
+        variant="secondary"
+        class="grid place-items-center size-11 hover:bg-neutral-600/50 opacity-65 hover:opacity-100"
         onclick={maximizeWindow}
-        class="grid h-full w-11 cursor-pointer place-items-center py-1.5 hover:bg-blue-500/75"
       >
         <MaxIcon size={14} />
-      </button>
+      </Button>
     {/if}
-    <button
+    <Button
+      icon
+      variant="secondary"
+      class="grid place-items-center size-11 opacity-65 hover:opacity-100"
       onclick={closeWindow}
-      class="grid h-full w-11 cursor-pointer place-items-center py-1.5 hover:bg-red-500/75"
     >
       <CloseIcon size={20} />
-    </button>
+    </Button>
   </div>
   {@render children?.()}
 </div>

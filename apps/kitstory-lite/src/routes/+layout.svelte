@@ -2,8 +2,16 @@
   import "../styles.css";
   import "@fontsource/azeret-mono";
 
-  import { ChevronLeftIcon, ChevronRightIcon, PlusIcon } from "@lucide/svelte";
-  import WindowContainer from "@kitstory/ui/components/layouts/WindowContainer.svelte";
+  import {
+    ChevronLeftIcon,
+    ChevronRightIcon,
+    EllipsisVerticalIcon,
+    PlusIcon,
+  } from "@lucide/svelte";
+  import { WindowContainer } from "@kitstory/ui/components/layouts";
+  import { Button } from "@kitstory/ui/components";
+  import { Dropdown, DropdownButton } from "$lib/components/dropdown";
+  import DropdownItem from "$lib/components/dropdown/DropdownItem.svelte";
 
   const { children } = $props();
 </script>
@@ -21,14 +29,26 @@
       >
         <ChevronRightIcon size={19} />
       </button>
-      <button
+      <Button
+        icon
         title="New tab"
         class="py-1.5 h-full flex items-center gap-x-2 cursor-pointer px-1.5 bg-neutral-600/75 hover:bg-neutral-400/75 rounded-md"
       >
         <PlusIcon size={19} />
-      </button>
+      </Button>
       <!-- <button>Home</button> -->
     </nav>
+  {/snippet}
+
+  {#snippet rightActions()}
+    <Dropdown>
+      <!-- <DropdownButton as={Button} icon title="Settings" variant="secondary">
+        <EllipsisVerticalIcon size={19} />
+      </DropdownButton>
+      <DropdownContents>
+        <DropdownItem></DropdownItem>
+      </DropdownContents> -->
+    </Dropdown>
   {/snippet}
 
   <main id="root">

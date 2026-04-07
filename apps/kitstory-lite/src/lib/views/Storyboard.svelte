@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Button } from "@kitstory/ui";
+  import { Button } from "@kitstory/ui/components";
   import { EllipsisIcon } from "@lucide/svelte";
 </script>
 

@@ -1,13 +1,14 @@
+/** biome-ignore-all lint/correctness/noUnusedFunctionParameters: method implementation still work-in-progress */
 import type { PlotBlock } from "./types/blocks"
 
-type Adapter = "sqlite" | "dexie"
+type DataAdapter = "sqlite" | "dexie"
 
 export class KitstoryBaseSync {
   block: BlockSync
   character: CharacterSync
 
   constructor(
-    protected dataAdapter: Adapter,
+    protected dataAdapter: DataAdapter,
     protected projectId: string,
   ) {
     this.block = new BlockSync()

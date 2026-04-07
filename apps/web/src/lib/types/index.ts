@@ -1,7 +1,7 @@
 export type BlockTypes = "character" | "narrator" | "cue"
 
 interface DefineBlock<D extends Record<string, unknown>> {
-  uuid: ReturnType<typeof crypto.randomUUID>
+  readonly uuid: ReturnType<typeof crypto.randomUUID>
   type: BlockTypes
   lock?: {
     reason: string
