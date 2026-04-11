@@ -1,58 +1,44 @@
-interface BaseAttributes {
-  /** For generating UUID, fix by adding `crypto.randomUUID()` */
-  readonly uuid: ReturnType<typeof crypto.randomUUID>
-  locked?: {
-    value: boolean
-    byAuthor: string
-  }
-}
+import type { DynamicObjectRecord } from "./utils"
 
-interface DialogBlock extends BaseAttributes {
-  type: "dialogue"
+interface KitstorySchemaBase<BlockType extends string, Schema extends DynamicObjectRecord> {
+  readonly uuid: string
+  type: BlockType
   data: {
-    character: string
-    content: string
-  }
+    locked?: {
+      value: boolean
+      byAuthor: string
+    }
+  } & Schema
 }
 
-interface NarratorBlock extends BaseAttributes {
-  type: "narrator"
-  data: {
-    content: string
-  }
-}
+type DialogBlock = KitstorySchemaBase<"dialogue", {
+  character: string
+  content: string
+}>
 
-interface CueBlock extends BaseAttributes {
-  type: "cue"
-  data: {
-    environment: "interior" | "exterior"
-    time: string
-    location: string
-  }
-}
 
-interface SectionBlock extends BaseAttributes {
-  type: "section"
-  data: {
-    title: string
-    isChronological: true
-  }
-}
+type NarratorBlock = KitstorySchemaBase<"narrator", {
+  content: string
+}>
 
-type ExtractKeyAsLiterals<K extends keyof I, I> = I extends {
-  [key in K]: infer R
-}
-  ? R
-  : never
+type CueBlock = KitstorySchemaBase<"cue", {
+  environment: "interior" | "exterior"
+  time: string
+  location: string
+}>
+
+type SectionBlock = KitstorySchemaBase<"section", {
+  title: string
+  isChronological: true
+}>
 
 export type PlotBlock = DialogBlock | NarratorBlock | CueBlock | SectionBlock
+export type PlotBlockTypes = PlotBlock["type"]
 
-export type PlotBlockTypes = ExtractKeyAsLiterals<"type", PlotBlock>
-
-export interface CharacterItem extends BaseAttributes {
+export type CharacterItem<Attributes extends DynamicObjectRecord = Record<string, string>> = KitstorySchemaBase<"character", {
   name: string
   image: string
   default: boolean
   biography?: string
-  attributes?: Record<string, string>
-}
+  attributes?: Attributes
+}>

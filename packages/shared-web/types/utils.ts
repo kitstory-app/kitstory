@@ -1,5 +1,13 @@
 import type { Snippet } from "svelte"
 
+/** 
+ * A type alias for `Record<string, unknown>` used to set type constraints
+ * from a generic.
+ * 
+ * **Do not use this as a regular type.**
+ */
+export type DynamicObjectRecord = Record<string, unknown>
+
 /**
  * A dynamic schema for generating schema types where one key stays constant and its
  * underlying data model changes
