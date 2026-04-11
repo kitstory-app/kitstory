@@ -5,6 +5,7 @@
   import { Portal } from "@kitstory/ui/components/layouts";
   import { twMerge } from "tailwind-merge";
   import { createPositionTracker } from "../../utils/trackDOMPosition";
+  import { createMenuA11y } from "../../utils/menuA11y";
   import { getDropdownContextState } from "./context";
 
   interface Props extends Pick<HTMLAttributes<HTMLElement>, "class"> {
@@ -40,75 +41,16 @@
   });
 
   // Accessibility stuff
-
-  const getItems = () => {
-    if (!docRoot) return [];
-
-    return Array.from(
-      docRoot.querySelectorAll<HTMLElement>(
-        '[role="menuitem"]:not([aria-disabled="true"])',
-      ),
-    );
-  };
-
-  const focusIndexItem = (index: number) => {
-    const items = getItems();
-    if (!items.length) return;
-
-    const next = (index + items.length) % items.length;
-    items[next]?.focus();
-  };
-
-  const focusFirstItem = () => {
-    focusIndexItem(0);
-  };
+  const menuA11y = createMenuA11y({
+    getRoot: () => docRoot,
+    onClose: () => ctx.close(),
+    onEscape: () => {
+      ctx.getTriggerElement()?.focus();
+    },
+  });
 
   const onMenuKeydown = (event: KeyboardEvent) => {
-    if (event.key === "Escape") {
-      ctx.close();
-      ctx.getTriggerElement()?.focus();
-      return;
-    }
-
-    if (event.key === "Tab") {
-      ctx.close();
-      return;
-    }
-
-    const items = getItems();
-    if (!items.length) return;
-
-    const activeElement = document.activeElement as HTMLElement | null;
-    // biome-ignore lint/style/noNonNullAssertion: required when dealing with DOM elements
-    const index = items.indexOf(activeElement!);
-
-    if (event.key === "ArrowDown") {
-      event.preventDefault();
-
-      focusIndexItem(index + 1);
-      return;
-    }
-
-    if (event.key === "ArrowUp") {
-      event.preventDefault();
-
-      focusIndexItem(index < 0 ? items.length - 1 : index - 1);
-      return;
-    }
-
-    if (event.key === "Home") {
-      event.preventDefault();
-
-      focusIndexItem(0);
-      return;
-    }
-
-    if (event.key === "End") {
-      event.preventDefault();
-
-      focusIndexItem(items.length - 1);
-      return;
-    }
+    menuA11y.onKeydown(event);
   };
 
   const clearWatcher = () => {
@@ -164,7 +106,7 @@
         position.sync();
         position.start();
         startWatcher();
-        focusFirstItem();
+        menuA11y.focusFirstItem();
       }, 0);
     });
 
