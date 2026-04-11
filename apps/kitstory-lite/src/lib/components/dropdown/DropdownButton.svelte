@@ -1,6 +1,6 @@
 <script lang="ts">
   import type { WithChildrenSnippet } from "@kitstory/shared-web/types";
-  import { onMount, type Component } from "svelte";
+  import type { Component } from "svelte";
   import type { HTMLButtonAttributes } from "svelte/elements";
   import { getDropdownContextState } from "./context";
 
@@ -10,18 +10,8 @@
   }
 
   const ctx = getDropdownContextState();
+  const { isOpen } = ctx;
   const { children, as, ...rest }: WithChildrenSnippet<Props> = $props();
-  let isOpen = $state(false);
-
-  onMount(() => {
-    const unsubscribe = ctx.isOpen.subscribe((nextIsOpen) => {
-      isOpen = nextIsOpen;
-    });
-
-    return () => {
-      unsubscribe();
-    };
-  });
 
   const toggleState = (event: MouseEvent) => {
     if (event.currentTarget instanceof HTMLElement) {
@@ -36,7 +26,7 @@
   <svelte:element
     this={as || "button"}
     aria-haspopup="menu"
-    aria-expanded={isOpen}
+    aria-expanded={$isOpen}
     aria-controls={ctx.contentId}
     onclick={toggleState}
     {...rest}
@@ -47,7 +37,7 @@
   {@const CustomButtonComponent = as}
   <CustomButtonComponent
     aria-haspopup="menu"
-    aria-expanded={isOpen}
+    aria-expanded={$isOpen}
     aria-controls={ctx.contentId}
     onclick={toggleState}
     {...rest}
