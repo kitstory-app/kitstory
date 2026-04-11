@@ -10,8 +10,12 @@
   } from "@lucide/svelte";
   import { WindowContainer } from "@kitstory/ui/components/layouts";
   import { Button } from "@kitstory/ui/components";
-  import { Dropdown, DropdownButton } from "$lib/components/dropdown";
-  import DropdownItem from "$lib/components/dropdown/DropdownItem.svelte";
+  import {
+    Dropdown,
+    DropdownButton,
+    DropdownContents,
+    DropdownItem,
+  } from "$lib/components/dropdown";
 
   const { children } = $props();
 </script>
@@ -42,12 +46,13 @@
 
   {#snippet rightActions()}
     <Dropdown>
-      <!-- <DropdownButton as={Button} icon title="Settings" variant="secondary">
+      <DropdownButton as={Button} icon title="Settings" variant="secondary">
         <EllipsisVerticalIcon size={19} />
       </DropdownButton>
       <DropdownContents>
-        <DropdownItem></DropdownItem>
-      </DropdownContents> -->
+        <DropdownItem>Themes</DropdownItem>
+        <DropdownItem>Options</DropdownItem>
+      </DropdownContents>
     </Dropdown>
   {/snippet}
 

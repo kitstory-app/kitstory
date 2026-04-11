@@ -1,26 +1,29 @@
 <script lang="ts">
-  import { onMount, type Snippet } from "svelte";
-  import { getDropdownState, setDropdownState } from "./context";
-  import { Portal } from "@kitstory/ui/components/layouts";
+  import type { Snippet } from "svelte";
+  import {
+    createDropdownContextState,
+    setDropdownContextState,
+  } from "./context";
 
   interface Props {
     children?: Snippet;
   }
 
-  onMount(() => {
-    window.addEventListener("keydown", (e) => {
-      const isDropdownActive = getDropdownState();
-      const isEscPressed = e.key === "Escape";
+  const ctx = createDropdownContextState();
+  setDropdownContextState(ctx);
 
-      if (!(isDropdownActive && isEscPressed)) return;
+  const handleEscapeKey = (event: KeyboardEvent) => {
+    const isEscPressed = event.key === "Escape";
 
-      setDropdownState(false);
-    });
-  });
+    if (!(ctx.getIsOpen() && isEscPressed)) return;
+
+    ctx.close();
+    ctx.getTriggerElement()?.focus();
+  };
 
   const { children }: Props = $props();
 </script>
 
-<Portal>
-  {@render children?.()}
-</Portal>
+<svelte:window onkeydown={handleEscapeKey} />
+
+{@render children?.()}
