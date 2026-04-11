@@ -8,10 +8,10 @@ interface Props extends HTMLInputAttributes {
   inputClass?: string
 }
 
-const { id, type, actions, inputClass, class: _class, ...others }: Props = $props()
+const { id, type, actions, inputClass, class: className, ...others }: Props = $props()
 </script>
 
-<div data-input-field="" class={twMerge("relative", _class as string)}>
+<div data-input-field="" class={twMerge("relative", className as string)}>
   <input
     {id}
     {type}

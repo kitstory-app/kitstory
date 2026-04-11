@@ -1,11 +1,11 @@
 <script lang="ts">
   import type { WithChildrenSnippet } from "@kitstory/shared-web/types";
   import type { Snippet } from "svelte";
+  import type { HTMLAttributes } from "svelte/elements";
 
-  interface Props {
+  interface Props extends Pick<HTMLAttributes<HTMLElement>, "class"> {
     actionSlot?: Snippet;
     disabled?: boolean;
-    class?: string;
   }
 
   const {

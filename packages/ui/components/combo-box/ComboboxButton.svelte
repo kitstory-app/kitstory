@@ -10,7 +10,7 @@ interface Props extends PluckedButtonProps {
   icon: Snippet
 }
 
-const { children, variant, icon, class: _class, size }: Partial<WithChildrenSnippet<Props>> = $props()
+const { children, variant, icon, class: className, size }: Partial<WithChildrenSnippet<Props>> = $props()
 </script>
 
 <div role="group" data-combobox-button="" class="flex items-center">
@@ -20,7 +20,7 @@ const { children, variant, icon, class: _class, size }: Partial<WithChildrenSnip
     class={twMerge(
       "h-full border-r-0 rounded-tr-none rounded-br-none",
       icon ? "inline-flex" : "block",
-      _class as string,
+      className as string,
     )}
   >
     {#snippet leftSlot()}
