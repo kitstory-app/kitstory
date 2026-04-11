@@ -4,18 +4,21 @@
   import type { HTMLAttributes } from "svelte/elements";
   import { Portal } from "@kitstory/ui/components/layouts";
   import { twMerge } from "tailwind-merge";
-  import { createPositionTracker } from "../../utils/trackDOMPosition";
+  import {
+    createPositionTracker,
+    type Anchor,
+  } from "../../utils/trackDOMPosition";
   import { createMenuA11y } from "../../utils/menuA11y";
   import { getDropdownContextState } from "./context";
 
   interface Props extends Pick<HTMLAttributes<HTMLElement>, "class"> {
-    anchor?: "top" | "bottom";
+    anchor?: Anchor;
   }
 
   const {
     children,
     class: className,
-    anchor = "bottom",
+    anchor = "bottom left",
   }: WithChildrenSnippet<Props> = $props();
 
   const ctx = getDropdownContextState();
@@ -31,6 +34,7 @@
 
   const position = createPositionTracker({
     getReferenceElement: () => ctx.getTriggerElement(),
+    getFloatingElement: () => docRoot,
     getAnchor: () => anchor,
     setStyle: (style) => {
       css = style;
@@ -53,19 +57,23 @@
     menuA11y.onKeydown(event);
   };
 
+  const clearOutsideWatcher = () => {
+    outsideCtrl?.abort();
+    outsideCtrl = null;
+  };
+
   const clearWatcher = () => {
     if (watcher !== null) {
       clearTimeout(watcher);
       watcher = null;
     }
 
-    outsideCtrl?.abort();
-    outsideCtrl = null;
+    clearOutsideWatcher();
     position.stop();
   };
 
   const startWatcher = () => {
-    clearWatcher();
+    clearOutsideWatcher();
 
     const next = new AbortController();
     outsideCtrl = next;
@@ -103,6 +111,7 @@
       watcher = setTimeout(() => {
         if (!(ctx.getIsOpen() && docRoot)) return;
 
+        clearOutsideWatcher();
         position.sync();
         position.start();
         startWatcher();
@@ -129,7 +138,7 @@
       aria-label="Dropdown menu"
       tabindex="-1"
       onkeydown={onMenuKeydown}
-      class={twMerge("fixed z-50 border rounded-sm p-2", className as string)}
+      class={twMerge("fixed z-50", className as string)}
     >
       {@render children?.()}
     </div>

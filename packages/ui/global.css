@@ -26,7 +26,7 @@
 
 @layer base {
   body {
-    @apply scheme-light-dark font-body overflow-x-hidden antialiased text-sm dark:bg-neutral-950 bg-neutral-100 dark:text-white;
+    @apply scheme-light-dark font-body overflow-x-hidden antialiased text-sm dark:bg-slate-900 bg-neutral-100 dark:text-white;
   }
 
   code {

@@ -1,12 +1,14 @@
 <script lang="ts">
-  import "../styles.css";
   import "@fontsource/azeret-mono";
 
   import {
     ChevronLeftIcon,
     ChevronRightIcon,
     EllipsisVerticalIcon,
+    PlugIcon,
     PlusIcon,
+    PuzzleIcon,
+    SettingsIcon,
   } from "@lucide/svelte";
   import { WindowContainer } from "@kitstory/ui/components/layouts";
   import { Button } from "@kitstory/ui/components";
@@ -49,9 +51,34 @@
       <DropdownButton as={Button} icon title="Settings" variant="secondary">
         <EllipsisVerticalIcon size={19} />
       </DropdownButton>
-      <DropdownContents>
-        <DropdownItem>Themes</DropdownItem>
-        <DropdownItem>Options</DropdownItem>
+      <DropdownContents
+        anchor="bottom right"
+        class="flex flex-col mt-2 w-60 bg-slate-950 rounded-sm p-2 shadow-md"
+      >
+        <div class="px-2.5 py-2 flex items-center gap-x-1">
+          <span>Theme</span>
+          <div></div>
+          <Button icon>
+            <ChevronRightIcon size={19} />
+          </Button>
+        </div>
+        <DropdownItem separator />
+        <DropdownItem
+          as="button"
+          class="hover:bg-slate-600 px-2.5 py-2 rounded-md text-left flex items-center gap-x-1"
+        >
+          <PlugIcon size={19} />
+          <span>Manage Plugins</span>
+        </DropdownItem>
+        <DropdownItem
+          as="button"
+          class="hover:bg-slate-600 px-2.5 py-2 rounded-md text-left flex items-center gap-x-1"
+        >
+          <SettingsIcon size={19} />
+          <span>Settings</span>
+        </DropdownItem>
+        <DropdownItem separator />
+        <div class="p-2 opacity-45">Version number placeholder</div>
       </DropdownContents>
     </Dropdown>
   {/snippet}
